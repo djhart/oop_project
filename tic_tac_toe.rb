@@ -48,8 +48,10 @@ def display(game)
 end
 
 a = 0
-puts "X or O?" unless a == "X" || a == "O"
-a = gets.chomp.upcase
+begin
+	puts "X or O?" 
+	a = gets.chomp.upcase
+end until a == "X" || a == "O"
 b = (a == "X" ?  "O" :  "X")
 player1 = Player.new(a)
 player2 = Player.new(b)
